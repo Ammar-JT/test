@@ -17,6 +17,8 @@ class PagesController extends Controller
         readfile($path);
         die;
      }
+
+     
     public function pdfFromPublicFile(){
 
         $currentPath = getcwd();
