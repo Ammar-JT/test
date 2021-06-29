@@ -22,6 +22,8 @@ Route::get('/pdf', [App\Http\Controllers\PagesController::class, 'pdf'])->name('
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('home.dashboard');
+
 
 
 
@@ -64,7 +66,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 - make auth.
 
-- I'll use this controller for all admin panel functions: 
-        Use homeController for admin panel
+- I'll use this  default controller for all admin panel functions: 
+         homeController
+
+-
+
 
 */

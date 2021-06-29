@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with('currentRouteName', Route::currentRouteName());
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard')->with('currentRouteName', Route::currentRouteName());
     }
 }
