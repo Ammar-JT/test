@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('index');
+
 
 Route::get('/pdf', [App\Http\Controllers\PagesController::class, 'pdf'])->name('pages.pdf');
 
@@ -83,9 +82,15 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard
 
 
 //----------------------------------------------------
-//              bootstrap admin panel
+//              redis pdf visitors counter
 //----------------------------------------------------
 /*
-- 
+- set up redis, and install predis
+
+- count all the visitors to the private pdf
+
+- store values in redis
+
+- display number of visitors in '/'
 
 */
