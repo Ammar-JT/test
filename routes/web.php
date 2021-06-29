@@ -69,7 +69,23 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard
 - I'll use this  default controller for all admin panel functions: 
          homeController
 
--
+- I'll set up: 
+    1- login
+    2- register
+    3- dashboard layout
+    4- dashboard page and home
 
+- done!!
+
+*/
+
+
+
+
+//----------------------------------------------------
+//              bootstrap admin panel
+//----------------------------------------------------
+/*
+- 
 
 */
