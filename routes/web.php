@@ -18,6 +18,10 @@ Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('i
 
 Route::get('/pdf', [App\Http\Controllers\PagesController::class, 'pdf'])->name('pages.pdf');
 
+//this next route will display a pdf file already exist in public, you can see it through this route: 
+Route::get('/public-pdf', [App\Http\Controllers\PagesController::class, 'pdfFromPublicFile'])->name('pages.public-pdf');
+//.. or just add in url: /file.pdf
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
