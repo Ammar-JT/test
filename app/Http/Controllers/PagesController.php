@@ -41,4 +41,6 @@ class PagesController extends Controller
         $visits = Redis::get('pdf-visits');
         return view('welcome')->with('visits', $visits);
     }
+
+
 }
