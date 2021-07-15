@@ -43,4 +43,9 @@ class PagesController extends Controller
     }
 
 
+    public function tooltip(){
+        return view('tooltip');
+    }
+
+
 }

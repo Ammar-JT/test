@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/tooltip', [App\Http\Controllers\PagesController::class, 'tooltip'])->name('tooltip');
+
+
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('index');
 
 
@@ -82,7 +85,9 @@ Route::get('/country', function(){
 
     // Get all countries                                
     $countries = countries(); 
-    dd($countries['sa']);
+    dd(country('kz'));
+
+    dd($countries['gr']);
 
     
     
