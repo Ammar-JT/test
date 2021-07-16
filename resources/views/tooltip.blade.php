@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <style>
-.tooltip {
-}
-
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;

@@ -111,6 +111,7 @@ Route::get('/country', function(){
     2- bootstrap admin panel 
     3- redis visitor counter
     4- contries list + country data
+    5- tooltip pop up when hover over a div
 */
 
 
@@ -183,5 +184,20 @@ Route::get('/country', function(){
 - enjoy :)
 
 */
+
+//----------------------------------------------------
+//              tooltip
+//----------------------------------------------------
+/*
+- made a div border color changed when hovering over it, also a tooltip displayed in the top corner, 
+I will use this feature in some of my project
+
+- obviously used this route for that: 
+        'tooltip'
+
+*/
+
+
+
 
 
