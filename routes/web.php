@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/resize', [App\Http\Controllers\PagesController::class, 'resizeIndex'])->name('resize.index');
+Route::post('/resize', [App\Http\Controllers\PagesController::class, 'resizeStore'])->name('resize.store');
+
+
 Route::get('/tooltip', [App\Http\Controllers\PagesController::class, 'tooltip'])->name('tooltip');
 
 

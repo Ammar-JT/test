@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Symfony\Component\HttpFoundation\Response;
 
 class PagesController extends Controller
 {
@@ -45,6 +46,25 @@ class PagesController extends Controller
 
     public function tooltip(){
         return view('tooltip');
+    }
+
+    public function resizeIndex(){
+        return view('resizing');
+    }
+
+    public function resizeStore(Request $request){
+        $h = 'hoohohos';
+
+        
+        if($request->hasFile('blob')){ //$req and hasFile is from laravel, instead of the global variable $_POST['']
+
+
+            $image = $request->file('blob')->store('public/images');
+
+            return "image uploaded successfully in public/images";
+            
+        }
+        
     }
 
 

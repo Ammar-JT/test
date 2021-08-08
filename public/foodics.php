@@ -38,6 +38,45 @@
 //                          Foodics Test
 //---------------------------------------------------------------------
 
+$a = 2;
+$b = 2; 
+
+$a = $a + $b;
+$b = 2 * $a; 
+$a = $a + $a;
+
+//echo $a;
+//echo $b;
+
+
+//------------------------------------------
+
+// $a infinit increment 0>1>2>0>1>2>0>1>2>....
+
+$a = 0;
+
+$n = 5;
+
+$result = "";
+
+for($x=0; $x<5; $x++){
+    if($a == 0){
+        $result = $result . '+';
+    }else{
+        $result = $result . '-';
+    }
+    if($a < 2){
+        $a++;
+    }else{
+        $a = 0;
+    }
+
+}
+return $result;
+// if $a==0 append +, otherwise return -
+// if 
+
+
 
 
 
