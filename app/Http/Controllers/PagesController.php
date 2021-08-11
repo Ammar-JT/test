@@ -54,17 +54,16 @@ class PagesController extends Controller
 
     public function resizeStore(Request $request){
         $h = 'hoohohos';
-
         
         if($request->hasFile('blob')){ //$req and hasFile is from laravel, instead of the global variable $_POST['']
-
-
             $image = $request->file('blob')->store('public/images');
-
             return "image uploaded successfully in public/images";
-            
         }
         
+    }
+
+    public function imageDroplist(){
+        return view('image-droplist');
     }
 
 

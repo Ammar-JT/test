@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/image-droplist', [App\Http\Controllers\PagesController::class, 'imageDroplist'])->name('image-droplist');
+
 
 Route::get('/resize', [App\Http\Controllers\PagesController::class, 'resizeIndex'])->name('resize.index');
 Route::post('/resize', [App\Http\Controllers\PagesController::class, 'resizeStore'])->name('resize.store');
