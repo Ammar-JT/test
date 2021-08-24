@@ -65,6 +65,7 @@ class PagesController extends Controller
     public function imageDroplist(){
         return view('image-droplist');
     }
+    
 
 
 }

@@ -13,7 +13,7 @@
 
 
     <!--
-        
+
         <script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
         <script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css"/>
@@ -40,7 +40,7 @@
     -->
 
     <div class="btn-group" style="margin:10px;">    <!-- CURRENCY, BOOTSTRAP DROPDOWN -->
-        <!--<a class="btn btn-primary" href="javascript:void(0);">Currency</a>-->                    
+        <!--<a class="btn btn-primary" href="javascript:void(0);">Currency</a>-->
         <a class="btn btn-light dropdown-toggle" data-toggle="dropdown" href="#"><img style="max-width: 100px" src="storage/materials/rocks.jpg"> USD <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><img style="max-width: 100px" src="storage/materials/rocks.jpg" />Rocks</li>
@@ -58,13 +58,13 @@
     $(".dropdown-menu li").click(function () {
     var selText = $(this).text();
     var imgSource = $(this).find('img').attr('src');
-    var img = '<img style="max-width: 100px" src="' + imgSource + '"/>';        
+    var img = '<img style="max-width: 100px" src="' + imgSource + '"/>';
     $(this).parents('.btn-group').find('.dropdown-toggle').html(img + ' ' + selText + ' <span class="caret"></span>');
-    
+
     $("#material").val(selText);
 
     });
-    
+
 </script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 <input name="file" type="file" id="select">
 <button onclick="uploadFile()">submit</button>
 <input type="hidden" id="token" value="{{ csrf_token() }}" name="token">
@@ -23,9 +21,9 @@ document.getElementById('select').onchange = function(evt) {
         // didItResize will be true if it managed to resize it, otherwise false (and will return the original file as 'blob')
         document.getElementById('preview').src = window.URL.createObjectURL(blob);
 
-        //after resizing the image, append it to the form: 
+        //after resizing the image, append it to the form:
         globalBlob = blob;
-        
+
         // you can also now upload this blob using an XHR.
     });
 
@@ -47,7 +45,7 @@ document.getElementById('select').onchange = function(evt) {
                 // didItResize will be true if it managed to resize it, otherwise false (and will return the original file as 'blob')
                 document.getElementById('preview').src = window.URL.createObjectURL(blob);
 
-                //after resizing the image, append it to the form: 
+                //after resizing the image, append it to the form:
 
                 // you can also now upload this blob using an XHR.
             });
@@ -75,11 +73,11 @@ document.getElementById('select').onchange = function(evt) {
         // define new form
         var formData = new FormData();
         formData.append('blob', globalBlob);
-        
+
 
         formData.append('csrf', $('meta[name="csrf-token"]').attr('content'));
 
-        
+
         // action after uploading happens
         xhr.onload = function(e) {
             console.log("File uploading completed!");
