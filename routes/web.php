@@ -142,6 +142,21 @@ use Illuminate\Support\Facades\Route;
             //dd(Redis::zcount('visits', $startTime, time()));
             //dd(Redis::zrange('visits', 0,-1));
 
+        //------------
+        //scan
+            //Redis::zadd('visitory', time() ,  $_SERVER['REMOTE_ADDR'] . ":" . time() . "-" . rand());
+            //Redis::save();
+            //dd(Redis::zrange('visitory', 0,-1));
+
+            
+            //scan all the keys in your redis
+                //dd(Redis::scan(0));
+
+            //scan all the keys in your redis for a key that start with v:
+                //dd(Redis::scan(0, 'match', 'v*'));
+
+            //scan a specific sorted set that called visitory, and start with 127.0.0.1: 
+                //dd(Redis::zscan('visitory', 0, 'match', '127.0.0.1*'));
 
 
 
@@ -154,7 +169,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-   /*     
+/*  
     });
 */
 
