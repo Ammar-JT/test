@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,161 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*
+    Route::get('/', function(){
+        //key: value // string, set that: 
+        //Redis::set('friend', 'momo');
+        //now see the value: 
+        //dd(Redis::get('friend'));
+    
+        //key: value // list
+        //Redis::lpush('frameworks', ['vuejs','laravel','nodejs']);
+        //see the value of that list (lrange = list range, put a range or put 0, -1 so you can get all)
+        //dd(Redis::lrange('frameworks', 0, -1)); // the list doesn't care if element is duplicated, unlike the set
+    
+        //key: value // set, the set does care if element is duplicated, unlike the list
+        //..so all the values are unique on it: 
+        //Redis::sadd('fronted-frameworks', ['angular, vuejs, react']);
+        //dd(Redis::smembers('fronted-frameworks'));
+
+        //set a number and incr or decr
+            //Redis::set('foo', 1);
+            //Redis::incr('foo');
+            //dd(Redis::get('foo'));
+
+        //exists?:
+            /* 
+            if(!Redis::exists('foo')){
+                Redis::set('foo', 26);
+                Redis::incr('foo');  
+            }else{
+                Redis::set('foo', 50);
+            }
+            dd(Redis::get('foo'));
+            */
+
+        //del: 
+            /*
+            if(Redis::exists('foo')){
+                Redis::del('foo');
+            }
+            dd(Redis::get('foo'));
+            */
+
+        //flushall: delete everything
+            /*
+            Redis::set('foo', 50);
+            Redis::flushall();
+            dd(Redis::get('foo'));
+            */
+
+        //i think it called key spaces key:subkey
+            /*
+            Redis::set('page:views', 50);
+            Redis::set('page:name', 'main page');
+            Redis::set('page:type', 'html');
+
+
+            Redis::incr('page:views');
+
+            dd(Redis::get('page:views') . '|' . Redis::get('page:name') . '|' . Redis::get('page:type'));
+            */
+
+
+        //setex: set a value with expiration time:
+            /*
+            //Redis::setex('foo', 12, '(i will be gone)');
+            //dd('value is:' . Redis::get('foo') . ', it will disapeer in:' . Redis::ttl('foo'));
+
+            //to persist the value: 
+            Redis::persist('foo');
+            dd('value is:' . Redis::get('foo') . ', it will disapeer in:' . Redis::ttl('foo'));
+            */
+
+        //dd(time());
+        //----------------
+        //list: lpush<<push from the left ,, rpush<<push from the right ,,
+            //Redis::lpush('people', 'ammar');
+            //Redis::lpush('people', 'khaled');
+            //Redis::lpush('people', 'ziyad');
+
+        //ranges base on index:
+            //dd(Redis::lrange('people', 0,-1));
+            //dd(Redis::lrange('people', 1,2));
+
+        //rpush
+            //Redis::rpush('people', 'asim');
+            //dd(Redis::lrange('people', 0,-1));
+
+        //lpop: delete from left, rpop: delete from right
+            //Redis::lpop('people');
+            //Redis::rpop('people');
+        //dd(Redis::lrange('people', 0,-1));
+
+        //------
+        //sorted set, i skipped regular set cuz it's very similar to list
+        //.. the only difference is that set has no duplicated elements
+
+        //ok, why i'm using sorted set? cuz i needed to count unique visitors: 
+
+        //zadd: add element to set with its score: 
+            //Redis::zadd('users', 123 , 'ammar');
+            //Redis::zadd('users', 123 , 'asim');
+            //Redis::zadd('users', 222 , 'ziyad');
+
+            //dd(Redis::zscore('users', 'ziyad'));
+            //dd(Redis::zrange('users', 0,-1));
+
+        //zadd, but i will use time() as score!
+            //$startTime = time();
+            //Redis::zadd('users', $startTime , 'ammar');
+            //Redis::zadd('users', time() , 'asim');
+            //Redis::zadd('users', time() , 'ziyad');
+
+            ////dd(Redis::zscore('users', 'ammar') . '|' . Redis::zscore('users', 'ziyad'));
+            ////dd(Redis::ZRANGEBYSCORE('users', $startTime, time()));
+            //dd(Redis::zcount('users', $startTime, time()));
+
+        //i will use time() as score, and ip:time() as value
+
+            //Redis::zadd('visits', time() ,  $_SERVER['REMOTE_ADDR'] . ":" . time() . "-" . rand());
+
+            //Redis::save();
+    
+            // let's convert todays date to time() format
+            //$startTime = strtotime("30th august 2021");
+
+            //dd(Redis::ZRANGEBYSCORE('visits', $startTime, time()));
+            //dd(Redis::zcount('visits', $startTime, time()));
+            //dd(Redis::zrange('visits', 0,-1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /*     
+    });
+*/
+
+
+
+
+
+
+
+Route::get('/simple-qr', [App\Http\Controllers\AgainController::class, 'simpleQr'])->name('simple-qr');
+
+Route::get('/endroid-qr', [App\Http\Controllers\PagesController::class, 'endroidQr'])->name('endroid-qr');
+
 Route::get('/image-droplist', [App\Http\Controllers\PagesController::class, 'imageDroplist'])->name('image-droplist');
 
 
@@ -21,10 +177,8 @@ Route::post('/resize', [App\Http\Controllers\PagesController::class, 'resizeStor
 
 Route::get('/tooltip', [App\Http\Controllers\PagesController::class, 'tooltip'])->name('tooltip');
 
-
+// the '/' and '/pdf' used redis, it won't work until you run a redis server:
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('index');
-
-
 Route::get('/pdf', [App\Http\Controllers\PagesController::class, 'pdf'])->name('pages.pdf');
 
 //this next route will display a pdf file already exist in public, you can see it through this route: 
