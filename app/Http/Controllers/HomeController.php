@@ -31,4 +31,7 @@ class HomeController extends Controller
     {
         return view('dashboard')->with('currentRouteName', Route::currentRouteName());
     }
+
+    
 }
+

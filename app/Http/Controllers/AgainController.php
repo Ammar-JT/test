@@ -14,4 +14,9 @@ class AgainController extends Controller
         
         echo $result;
     }
+
+    public function scrollSpy()
+    {
+        return view('scroll_spy');
+    }
 }

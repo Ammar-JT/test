@@ -272,6 +272,10 @@ Route::get('/country', function(){
 });
 
 
+Route::get('/spy', [App\Http\Controllers\AgainController::class, 'scrollSpy'])->name('scroll_spy');
+
+
+
 
 
 
@@ -369,6 +373,18 @@ I will use this feature in some of my project
 
 - obviously used this route for that: 
         'tooltip'
+
+*/
+
+
+
+
+//----------------------------------------------------
+//              Sticky Navbar + Scroll Spy
+//----------------------------------------------------
+/*
+- I always create those two manually, but turned out it exist in bootstrap already,
+  so, I'm gonna try it here
 
 */
 
