@@ -19,4 +19,9 @@ class AgainController extends Controller
     {
         return view('scroll_spy');
     }
+
+    public function productModal()
+    {
+        return view('product_modal');
+    }
 }

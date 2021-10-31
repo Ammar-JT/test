@@ -274,6 +274,8 @@ Route::get('/country', function(){
 
 Route::get('/spy', [App\Http\Controllers\AgainController::class, 'scrollSpy'])->name('scroll_spy');
 
+Route::get('/product-modal', [App\Http\Controllers\AgainController::class, 'productModal'])->name('product_modal');
+
 
 
 
@@ -389,6 +391,12 @@ I will use this feature in some of my project
 */
 
 
+//----------------------------------------------------
+//              Product Modal
+//----------------------------------------------------
+/*
+- I'm gonna make a product modal (for anything), in the simplest possible way using bootstrap
 
+*/
 
 

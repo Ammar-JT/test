@@ -11,6 +11,34 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <style>
+    /*
+        .nav-scroller {
+            position: static;
+            z-index: 99;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            padding-bottom: 5rem;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .stickyadd{
+            position: fixed !important;
+            box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.05);
+            background: rgb(250, 250, 250)
+        }
+
+    */
     body {
         position: relative; 
     }
@@ -33,6 +61,8 @@
         -webkit-overflow-scrolling: touch;
     
     }
+
+    
   #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
   #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
   #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
@@ -50,7 +80,7 @@
 
   </style>
 </head>
-<body data-spy="scroll" data-target="#navbar1" data-offset="50">
+<body data-spy="scroll" data-target="#navbar1" data-offset="200">
 
     <div class="container">
         <div class="pre-nav text-center">
@@ -70,7 +100,7 @@
             <div class="navbar-collapse collapse" id="myNavbar">
                 <ul class="navbar-nav w-100 justify-content-between">
                     <li class="nav-item">
-                        <a class="nav-link" href="#section1">section1</a>
+                        <a class="nav-link " href="#section1">section1</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#section2">section2</a>
