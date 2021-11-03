@@ -24,4 +24,9 @@ class AgainController extends Controller
     {
         return view('product_modal');
     }
+
+
+    public function timepicker(){
+        return view('timepicker');
+    }
 }

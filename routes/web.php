@@ -276,6 +276,7 @@ Route::get('/spy', [App\Http\Controllers\AgainController::class, 'scrollSpy'])->
 
 Route::get('/product-modal', [App\Http\Controllers\AgainController::class, 'productModal'])->name('product_modal');
 
+Route::get('/timepicker', [App\Http\Controllers\AgainController::class, 'timepicker'])->name('timepicker');
 
 
 
@@ -396,6 +397,17 @@ I will use this feature in some of my project
 //----------------------------------------------------
 /*
 - I'm gonna make a product modal (for anything), in the simplest possible way using bootstrap
+
+*/
+
+
+//----------------------------------------------------
+//              Cart Modal
+//----------------------------------------------------
+/*
+- I'm gonna make a cart modal (for anything), in the simplest possible way using bootstrap
+
+- it exist in the same route of product modals
 
 */
 
